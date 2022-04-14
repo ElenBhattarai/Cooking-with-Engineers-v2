@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Cooking with Engineers</title>
+</head>
+<body>
+    <div class="container p-4 my-5 text-black" id="title">
+        <h2 class="text-center">Welcome to Cooking with Engineers!</h2>
+        <p class="text-center">A 448 Project by <abbr title="Elen Bhattarai, Javante Ewing, Alex Manley, Joaquin Vargas, and Max Dick">Group 7</abbr>.</p>
+    </div>
+    <!-- make a div to wrap all the items selections -->
+    <div class="float-container">   
+        <!-- div for selecting ingredients -->
+        <div class="float-child" id="section1">
+            <h2>Add your Ingredients</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#meats">Meats </button>
+                <!-- div for buttons for all the meat stuff -->
+                <div id="meats" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Chicken</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Beef</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pork</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Fish</button>
+                </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#veg">Vegetables </button>
+                <!-- div for buttons for all the veg stuff -->
+                <div id="veg" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Lettuce</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Carrots</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Broccoli</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Peas</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Corn</button>
+                </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#spice">Spices </button>
+                <!-- div for buttons for all the spices -->
+                <div id="spice" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Salt</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pepper</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Garlic Powder</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Onion Powder</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Lemon-Pepper</button>
+                </div>
+        </div>
+        <!-- making another div for all the filters we will have -->
+        <div class="float-child" id="section1">
+            <h2>Filters</h2>
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#allergies">Allergies </button>
+                    <div id="allergies" class="collapse">
+                        <button type="button" class="btn btn-outline-success">Peanut</button>
+                        <button type="button" class="btn btn-outline-success">Milk</button>
+                        <button type="button" class="btn btn-outline-success">Eggs</button>
+                    </div>
+        </div>
+
+        <button type="button" class="btn btn-block" id="fetch">Search </button>
+    </div>
+
+    <script src = "array.js"></script>
+    <script src = "app.js"></script>
+
+</body>
+</html>
