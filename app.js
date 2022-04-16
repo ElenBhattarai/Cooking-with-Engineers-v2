@@ -2,11 +2,14 @@
 let fetchButton = document.querySelector("#fetch")
 //Grabbing the buttons in the ingredients menu
 let selectedItems = document.querySelectorAll('#clicked')
-
 //Setting up an array to set the response we get from the server to an array
 let data = []
 //Setting up an array to put in all the ingredients that the user has selected
 let ingredients = []
+
+let modal = document.querySelector('.modall')
+
+
 
 function insertionSort(arr)
 {
@@ -28,7 +31,7 @@ const fetchAPI = async() => {
     //first part of the URL
     let url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' 
     //second part of the URL
-    let key = '&number=10&apiKey=010f07cc7be4416ea7006d8355335fcd'
+    let key = '&number=12&apiKey=010f07cc7be4416ea7006d8355335fcd'
     //set an empty strings called items to put in the ingredients they selected to put in the URL
     let items = ""
     //run a for loop across all the ingredients that the user selected
@@ -89,6 +92,7 @@ fetchButton.addEventListener("click", ()=>fetchAPI())
 
 //Function to create the Results that we get i.e the recipes as cards
 const createResultCards = () => {
+    removeResultCards()
     //traverse through the data array that we have which is all the receipes that we get
     for(let i = 0; i < data.length; i++) {
         //create a div called cards
@@ -109,6 +113,8 @@ const createResultCards = () => {
         let img = document.createElement("img")
         //the source of the image will be the image that we have in the array
         img.src = data[i].image
+        img.style.width = '350px'
+        img.style.height = '300px'
         //append the image to the DOM
         image.appendChild(img)
 
@@ -130,9 +136,13 @@ const createResultCards = () => {
         //add a class of description to it
         desc.classList.add('description')
         //make a paragraph
-        let p1 = document.createElement("p")
+        
+        let p3 = document.createElement("span")
+        let b1 = document.createElement("b")
+        b1.innerText = "Used Ingredient: "
+        p3.appendChild(b1)
+        let p1 = document.createElement("span")
         //set the inner text as used ingredients 
-        p1.innerText = "Used Ingredient: "
         let k = 0
         //go through the used ingredients given from the server and add it to the used Ingredients.
         for(let j = 0; j < data[i].usedIngredientCount; j++) {
@@ -144,30 +154,65 @@ const createResultCards = () => {
             k++
         }
         //create a paragraph tag again for missed ingredients
-        let p2 = document.createElement("p")
+        let p4 = document.createElement("span")
+        let b2 = document.createElement("b")
+        b2.innerText = "Missed Ingredient: "
+        p4.appendChild(b2)
+        let p2 = document.createElement("span")
         //set the inner text as missed ingredients
-        p2.innerText = "Missed Ingredient: "
         k = 0
         //go through the missed ingredients given from the server and add it to the missed ingredients.
         for(let j = 0; j < data[i].missedIngredientCount; j++) {
-            if(k == 0) {
-                p2.innerText = p2.innerText + data[i].missedIngredients[j].name 
-            } else {
-                p2.innerText = p2.innerText + ", "+ data[i].missedIngredients[j].name 
+            if(j < 5) {
+                if(k == 0) {
+                    p2.innerText = p2.innerText + data[i].missedIngredients[j].name 
+                } else {
+                    p2.innerText = p2.innerText + ", "+ data[i].missedIngredients[j].name 
+                }
+                k++
             }
-            k++
         }
+        let br = document.createElement("br")
         //add the description to the DOM
+        desc.appendChild(p3)
         desc.appendChild(p1)
         //add the paragraph to the DOM
+        desc.appendChild(br)
+        desc.appendChild(p4)
         desc.appendChild(p2)
         //add the description to cards
         cards.appendChild(desc)
         //create a button to view the recipe of the dishes that we get as cards.
         let recipe = document.createElement("button")
-        recipe.innerText = "View Recipe>>"
+        recipe.addEventListener("click", ()=>viewRecipe(data[i].id))
+        
+        recipe.classList.add('view')
+        recipe.innerText = "View Recipe"
         desc.appendChild(recipe)
     }
+}
 
+//remove the cards that were already there from the previous result
+const removeResultCards = () => {
+    let resultCards = Array.from(document.getElementsByClassName('cards'))  
+    for(let i = 0 ; i < resultCards.length; i++) {
+        let a = resultCards[i]
+        a.remove()
+    }
+}   
 
+const viewRecipe = (name) => {
+    modal.style.display = "block"
+    let buttonToCloseModal = document.querySelector('.toClose')
+    buttonToCloseModal.addEventListener("click", ()=> {
+        modal.style.display = "none"
+    })
+    fetchRecipe(name)
+}
+
+const fetchRecipe = async (rname) => {
+    let rnameInt = Number(rname)
+    let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=010f07cc7be4416ea7006d8355335fcd`)
+    let rjson = await rdata.json()
+    console.log(rjson)
 }
