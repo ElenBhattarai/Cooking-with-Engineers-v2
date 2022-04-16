@@ -30,7 +30,7 @@
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0;
+    top: 0px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -38,13 +38,28 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
+  .toClose{
+      width: 50px;
+      border-top-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      position: absolute; 
+      top: 1px;
+      right: 1px;
+      background-color: red;
+      color: white;
+  }
+
   /* Modal Content/Box */
   .modall-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 2% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
   }
 
 .view:hover{
@@ -67,6 +82,14 @@
     padding: 20px;
     height: 30%;
     background-color: paleturquoise;
+}
+.steps{
+    display: flex;
+    flex-direction: column;
+}
+
+.stepsText{
+    margin: 3px;
 }
 
 #section1 {

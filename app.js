@@ -8,6 +8,7 @@ let data = []
 let ingredients = []
 
 let modal = document.querySelector('.modall')
+let modalContent = document.querySelector('.modall-content')
 
 
 
@@ -31,7 +32,7 @@ const fetchAPI = async() => {
     //first part of the URL
     let url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' 
     //second part of the URL
-    let key = '&number=12&apiKey=010f07cc7be4416ea7006d8355335fcd'
+    let key = '&number=12&apiKey=25c19ca358ea48d8a1e478cd55ffed3f'
     //set an empty strings called items to put in the ingredients they selected to put in the URL
     let items = ""
     //run a for loop across all the ingredients that the user selected
@@ -184,7 +185,7 @@ const createResultCards = () => {
         cards.appendChild(desc)
         //create a button to view the recipe of the dishes that we get as cards.
         let recipe = document.createElement("button")
-        recipe.addEventListener("click", ()=>viewRecipe(data[i].id))
+        recipe.addEventListener("click", ()=>viewRecipe(data[i].id, data[i].title, data[i].image))
         
         recipe.classList.add('view')
         recipe.innerText = "View Recipe"
@@ -201,18 +202,46 @@ const removeResultCards = () => {
     }
 }   
 
-const viewRecipe = (name) => {
+const viewRecipe = (name,title,image) => {
     modal.style.display = "block"
     let buttonToCloseModal = document.querySelector('.toClose')
+    let ab = modalContent.children[0]
     buttonToCloseModal.addEventListener("click", ()=> {
         modal.style.display = "none"
+        modalContent.innerHTML = '<button class = "toClose">Close</button>'
     })
-    fetchRecipe(name)
+    fetchRecipe(name,title,image)
 }
 
-const fetchRecipe = async (rname) => {
+const fetchRecipe = async (rname,title, image) => {
     let rnameInt = Number(rname)
-    let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=010f07cc7be4416ea7006d8355335fcd`)
+    let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=25c19ca358ea48d8a1e478cd55ffed3f`)
     let rjson = await rdata.json()
-    console.log(rjson)
+    addDatatoModal(rjson,title,image)
+}
+
+const addDatatoModal = (rjson,title,image) => {
+
+    let rname = document.createElement("h2")
+    rname.innerText = title
+    modalContent.appendChild(rname)
+
+    let rimg = document.createElement("img")
+    rimg.src = image
+    rimg.style.width = "200px"
+    rimg.style.height = "200px"
+
+    modalContent.appendChild(rimg)
+    // console.log(rjson)
+
+    let steps = document.createElement("div")
+    steps.classList.add("steps")
+    modalContent.appendChild(steps)
+
+    for(let i = 0; i < rjson[0].steps.length; i++) {
+        let div = document.createElement("div")
+        div.classList.add("stepsText")
+        div.innerText = i+1 + ") " + rjson[0].steps[i].step + "\n"
+        steps.appendChild(div)
+    }
 }
