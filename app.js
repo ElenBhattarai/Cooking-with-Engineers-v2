@@ -10,8 +10,6 @@ let ingredients = []
 let modal = document.querySelector('.modall')
 let modalContent = document.querySelector('.modall-content')
 
-
-
 function insertionSort(arr)
 {
     let i, key, j;
@@ -217,6 +215,7 @@ const fetchRecipe = async (rname,title, image) => {
     let rnameInt = Number(rname)
     let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=25c19ca358ea48d8a1e478cd55ffed3f`)
     let rjson = await rdata.json()
+    console.log(rjson)
     addDatatoModal(rjson,title,image)
 }
 

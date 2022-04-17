@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -6,14 +7,27 @@
 
 #title {
     box-shadow: 2px 2px 10px black;
-    background-color: paleturquoise;
+    background-color: #FBE7C6;
+    border-radius: 20px;
+    width: 70%;
 }
+
+
 #fetch {
     position: absolute;
-    top: 33.5%;
-    left: 47%;
-    box-shadow: 2px 2px 10px black;
-    background-color: palevioletred;
+    top: 55%;
+    right: 2%;
+    box-shadow: 2px 2px 3px black;
+    background-color: green;
+    color: white;
+    
+}
+
+.btn-primary {
+    background-color: burlywood;
+    color: black;
+    padding: auto;  
+    border-radius: 10px;
 }
 
 .view {
@@ -93,17 +107,25 @@
 }
 
 #section1 {
+    position: relative;
     width: 50%;
     box-shadow: 2px 2px 10px black;
+    background-color: #FBE7C6
+
 }
 #section2 {
+    position: relative;
     width: 50%;
     box-shadow: 2px 2px 10px black;
+    background-color: #FBE7C6
+
 }
 
 body{
-    font-family: sans-serif;
-    background-color: palegreen;
+    font-family: Raleway;
+    /* background-image: url('kitchen.png');
+    background-repeat: no-repeat; */
+    background-color: #B4F8C8
 }
 
 p {
