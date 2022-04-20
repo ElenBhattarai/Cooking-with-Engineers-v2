@@ -112,8 +112,6 @@ const createResultCards = () => {
         let img = document.createElement("img")
         //the source of the image will be the image that we have in the array
         img.src = data[i].image
-        img.style.width = '350px'
-        img.style.height = '300px'
         //append the image to the DOM
         image.appendChild(img)
 
