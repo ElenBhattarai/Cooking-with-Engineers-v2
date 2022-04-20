@@ -15,12 +15,11 @@
 
 #fetch {
     position: absolute;
-    top: 55%;
+    top: 53.5%;
     right: 2%;
-    box-shadow: 2px 2px 3px black;
     background-color: green;
     color: white;
-    
+    border-color: black;
 }
 
 .btn-primary {
