@@ -217,6 +217,19 @@ const fetchRecipe = async (rname,title, image, usedIngredients, missedIngredient
     addDatatoModal(rjson,title,image,usedIngredients, missedIngredients)
 }
 
+const downloadF = (filename, text) => {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+}
+
 const addDatatoModal = (rjson,title,image,usedIngredients, missedIngredients) => {
 
     let rname = document.createElement("h2")
@@ -265,5 +278,6 @@ const addDatatoModal = (rjson,title,image,usedIngredients, missedIngredients) =>
     let download = document.createElement("button")
     download.classList.add('download')
     download.innerText = "Download Recipe"
+    download.addEventListener("click", ()=> downloadF('hello.txt', steps.innerText))
     modalContent.appendChild(download)
 }
