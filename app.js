@@ -278,6 +278,6 @@ const addDatatoModal = (rjson,title,image,usedIngredients, missedIngredients) =>
     let download = document.createElement("button")
     download.classList.add('download')
     download.innerText = "Download Recipe"
-    download.addEventListener("click", ()=> downloadF('hello.txt', steps.innerText))
+    download.addEventListener("click", ()=> downloadF(`${rname.innerText} recipe.txt`, rname.innerText + "\n\n" + ingredients.innerText + "\n\n"+ steps.innerText))
     modalContent.appendChild(download)
 }
