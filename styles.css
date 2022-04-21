@@ -38,6 +38,12 @@
     border-bottom-right-radius: 7px;
 }
 
+.ingredients{
+    color: red;
+    margin: 10px;
+    font-size: 20px;
+}
+
 .modall {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -62,6 +68,14 @@
       color: white;
   }
 
+  .download {
+    width: 200px;
+    background-color: red;
+    color: white;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
   /* Modal Content/Box */
   .modall-content {
     display: flex;
@@ -73,6 +87,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
+    background-color: 	#AFEEEE
   }
 
 .view:hover{

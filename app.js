@@ -181,7 +181,7 @@ const createResultCards = () => {
         cards.appendChild(desc)
         //create a button to view the recipe of the dishes that we get as cards.
         let recipe = document.createElement("button")
-        recipe.addEventListener("click", ()=>viewRecipe(data[i].id, data[i].title, data[i].image))
+        recipe.addEventListener("click", ()=>viewRecipe(data[i].id, data[i].title, data[i].image, data[i].usedIngredients, data[i].missedIngredients))
         
         recipe.classList.add('view')
         recipe.innerText = "View Recipe"
@@ -198,7 +198,7 @@ const removeResultCards = () => {
     }
 }   
 
-const viewRecipe = (name,title,image) => {
+const viewRecipe = (name,title,image, usedIngredients, missedIngredients) => {
     modal.style.display = "block"
     let buttonToCloseModal = document.querySelector('.toClose')
     let ab = modalContent.children[0]
@@ -206,18 +206,18 @@ const viewRecipe = (name,title,image) => {
         modal.style.display = "none"
         modalContent.innerHTML = '<button class = "toClose">Close</button>'
     })
-    fetchRecipe(name,title,image)
+    fetchRecipe(name,title,image,usedIngredients, missedIngredients)
 }
 
-const fetchRecipe = async (rname,title, image) => {
+const fetchRecipe = async (rname,title, image, usedIngredients, missedIngredients) => {
     let rnameInt = Number(rname)
     let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=25c19ca358ea48d8a1e478cd55ffed3f`)
     let rjson = await rdata.json()
-    console.log(rjson)
-    addDatatoModal(rjson,title,image)
+    // console.log(rjson)
+    addDatatoModal(rjson,title,image,usedIngredients, missedIngredients)
 }
 
-const addDatatoModal = (rjson,title,image) => {
+const addDatatoModal = (rjson,title,image,usedIngredients, missedIngredients) => {
 
     let rname = document.createElement("h2")
     rname.innerText = title
@@ -229,7 +229,27 @@ const addDatatoModal = (rjson,title,image) => {
     rimg.style.height = "200px"
 
     modalContent.appendChild(rimg)
-    // console.log(rjson)
+
+    let allIngredients = []
+
+    for(let i = 0; i < usedIngredients.length; i++) {
+        allIngredients.push(usedIngredients[i].name)
+    }
+
+    for(let i = 0; i < missedIngredients.length; i++) {
+        allIngredients.push(missedIngredients[i].name)
+    }
+
+    let ingredients = document.createElement("div")
+    ingredients.classList.add("ingredients")
+    ingredients.innerHTML = 'Ingredients: '
+
+
+    for(let i = 0; i < allIngredients.length; i++) {
+        ingredients.innerText += allIngredients[i] + ", "
+    }
+
+    modalContent.appendChild(ingredients)
 
     let steps = document.createElement("div")
     steps.classList.add("steps")
@@ -241,4 +261,9 @@ const addDatatoModal = (rjson,title,image) => {
         div.innerText = i+1 + ") " + rjson[0].steps[i].step + "\n"
         steps.appendChild(div)
     }
+
+    let download = document.createElement("button")
+    download.classList.add('download')
+    download.innerText = "Download Recipe"
+    modalContent.appendChild(download)
 }
