@@ -185,17 +185,46 @@
         <!-- making another div for all the filters we will have -->
         <div class="float-child" id="section2">
             <h2>Filters</h2>
-                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#allergies">Allergies </button>
+                <!-- INTOLERANCES -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#allergies">Intolerances </button>
                     <div id="allergies" class="collapse">
-                        <button type="button" class="btn btn-outline-success">Peanut</button>
-                        <button type="button" class="btn btn-outline-success">Milk</button>
-                        <button type="button" class="btn btn-outline-success">Eggs</button>
+                        <button type="button" id="clicked" class="btn btn-outline-success">Dairy</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Egg</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Gluten</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Grain</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Peanut</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Seafood</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Sesame</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Shellfish</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Soy</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Sulfite</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Tree Nut</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Wheat</button>
+                    </div>
+                <!-- CALORIES -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#cal">Total Calories </button>
+                    <div id="cal" class="collapse">
+                            <div class="d-flex my-4" id="calories">
+                                <span class="font-weight-bold indigo-text mr-2 mt-1">100</span>
+                                <form class="range-field w-25">
+                                    <input type="range" min="100" max="1000" value="550" class="slider" step="50" onchange="caloriesRange.value=value">
+                                    <input type="text" id="caloriesRange">
+                                </form>
+                                <span class="font-weight-bold indigo-text ml-2 mt-1">1000</span>
+                              </div>
+                              <button type="button" id="clicked" class="btn btn-outline-success">Apply</button>
+                    </div>
+                <!-- DIETS -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#diet">Diets </button>
+                    <div id="diet" class="collapse">
+                        <button type="button" id="clicked" class="btn btn-outline-success">Vegetarian</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Vegan</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Pescatarian</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Ketogenic</button>
+                        <button type="button" id="clicked"  class="btn btn-outline-success">Paleo</button>
                     </div>
         </div>
-
-        
     </div>
     <script src = "app.js"></script>
-
 </body>
 </html>
