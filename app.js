@@ -2,6 +2,7 @@
 let fetchButton = document.querySelector("#fetch")
 //Grabbing the buttons in the ingredients menu
 let selectedItems = document.querySelectorAll('#clicked')
+let intolerance = document.querySelectorAll('#intolerance')
 //Setting up an array to set the response we get from the server to an array
 let data = []
 //Setting up an array to put in all the ingredients that the user has selected
@@ -30,7 +31,7 @@ const fetchAPI = async() => {
     //first part of the URL
     let url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' 
     //second part of the URL
-    let key = '&number=12&apiKey=25c19ca358ea48d8a1e478cd55ffed3f'
+    let key = '&number=12&apiKey=112c9e46de254a86a707eb74c737b3a1'
     //set an empty strings called items to put in the ingredients they selected to put in the URL
     let items = ""
     //run a for loop across all the ingredients that the user selected
@@ -79,10 +80,22 @@ const selected = (s) => {
     }
 }
 
+const intoler = (s) => {
+    if(s.classList.contains('selected')){
+        s.classList.remove('selected')
+    } else{
+        s.classList.add('selected')
+    }
+}
+
 //For all the ingredients button
 for(let s of selectedItems){
     //add an event listener that calls the function selected(s) defined above.
     s.addEventListener("click", ()=> selected(s))     
+}
+
+for(let i of intolerance){
+    i.addEventListener("click", ()=> intoler(i))
 }
 
 //Button to listen to the fetch button and call the fectchAPI() function above.
@@ -211,7 +224,7 @@ const viewRecipe = (name,title,image, usedIngredients, missedIngredients) => {
 
 const fetchRecipe = async (rname,title, image, usedIngredients, missedIngredients) => {
     let rnameInt = Number(rname)
-    let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=25c19ca358ea48d8a1e478cd55ffed3f`)
+    let rdata = await fetch(`https://api.spoonacular.com/recipes/${rnameInt}/analyzedInstructions?apiKey=112c9e46de254a86a707eb74c737b3a1`)
     let rjson = await rdata.json()
     // console.log(rjson)
     addDatatoModal(rjson,title,image,usedIngredients, missedIngredients)
