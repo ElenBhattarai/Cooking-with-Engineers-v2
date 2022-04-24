@@ -48,4 +48,3 @@ We estimated from our previous labs and projects that **1 story point** is equiv
 
 Therefore our total number of estimated hours for project 4 is **39 hours**!
 
-[return to main page.](README.md)
