@@ -23,8 +23,8 @@ We apply the [Agile](https://en.wikipedia.org/wiki/Agile_software_development) m
 - **Binary Search Tree:** The most confusing of the data structures.
 - **Cooking with Engineers(Project 3):** Input ingredients to find recipes to make
 - **Battleship:** Project 1 implementation of the battleship game.
-- **Battleship With AI:** Battleship with AI and big shot
-  **Cooking with Engineers:** Prototype
+- **Battleship With AI:** Battleship with AI and big shot.
+- **Cooking with Engineers:** Prototype
 
 
 </details>
@@ -36,14 +36,16 @@ We apply the [Agile](https://en.wikipedia.org/wiki/Agile_software_development) m
 | "Hello world"	| Loops	| Data sets	| DMV | Browser |	Sorts |
 | FizzBuzz | 2D Arrays | Shapes | Classes | Board Games | Elevator | Binary Search Tree |
 | Grid | Taco Shop Code | Tab Panel | Shape Container | Maze | Battleship | 
-|  |  |  |  |  | Cooking with Engineers |
+|  |  |  |  |  | Cooking with Engineers Prototype |
 |  |  |  |  |  | Battleship With AI | 
+|  |  |  |  |  | Cooking with Engineers Final Project | 
 
 
-So, we estimated our **Project 3** cooking with engineers to be **13** story points.
+
+So, we estimated our **Project 4** cooking with engineers to be **13** story points.
 
 We estimated from our previous labs and projects that **1 story point** is equivalent to **3 hours**. We put out all the time period that we took for each one of the projects and labs that we have mentioned above and then decided that one story point would be equivalent to 3 hours.
 
-Therefore our total number of estimated hours for project 2 is **39 hours**!
+Therefore our total number of estimated hours for project 4 is **39 hours**!
 
 [return to main page.](README.md)
