@@ -24,6 +24,7 @@ We apply the [Agile](https://en.wikipedia.org/wiki/Agile_software_development) m
 - **Cooking with Engineers(Project 3):** Input ingredients to find recipes to make
 - **Battleship:** Project 1 implementation of the battleship game.
 - **Battleship With AI:** Battleship with AI and big shot
+  **Cooking with Engineers:** Prototype
 
 
 </details>
@@ -34,9 +35,10 @@ We apply the [Agile](https://en.wikipedia.org/wiki/Agile_software_development) m
 | :--: | :--: | :--: | :--: | :--: | :--: |
 | "Hello world"	| Loops	| Data sets	| DMV | Browser |	Sorts |
 | FizzBuzz | 2D Arrays | Shapes | Classes | Board Games | Elevator | Binary Search Tree |
-| Grid | Taco Shop Code | Tab Panel | Shape Container | Maze | Battleship |
+| Grid | Taco Shop Code | Tab Panel | Shape Container | Maze | Battleship | 
 |  |  |  |  |  | Cooking with Engineers |
 |  |  |  |  |  | Battleship With AI | 
+
 
 So, we estimated our **Project 3** cooking with engineers to be **13** story points.
 
