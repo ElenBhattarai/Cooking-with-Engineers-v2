@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Grape+Nuts&family=Marck+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Cooking with Engineers</title>
+</head>
+<body>
+    <div class = "modall">
+        <div class = "modall-content">
+            <button class = "toClose"> Close </button>
+        </div>
+    </div>
+    
+    <div class="container p-4 my-5 text-black" id="title">
+        <h2 class="text-center">Welcome to Cooking with Engineers!</h2>
+        <p class="text-center"> Project 4 by <abbr title="Elen Bhattarai, Javante Ewing, Alex Manley, Joaquin Vargas, and Max Dick">Group 7</abbr>.</p>
+    </div>
+    <!-- make a div to wrap all the items selections -->
+    <div class="float-container">   
+        <!-- div for selecting ingredients -->
+        <div class="float-child" id="section1">
+            <h2>Add your Ingredients</h2>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#meats">Meats </button>
+                <!-- MEATS -->
+                <div id="meats" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ground Beef</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ground Turkey</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Steak</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Turkey Breast</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Deli Turkey</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Deli Ham</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Deli Chicken</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Roast Beef</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pork Chops</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Chuck Roast</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Chicken Breast</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Chicken Thigh</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Chicken Wing</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Sausage Links</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Sausage Patty</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ground Sausage</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ribs</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Shrimp</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Salmon</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Tilapia</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cod</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Bacon</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Bratwurst</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Hot Dog</button>
+
+                </div>
+           
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#veg">Vegetables </button>
+                <!-- VEGETABLES -->
+                <div id="veg" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Onions</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Potatoes</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Lettuce</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Broccoli</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cauliflower</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Carrot</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Asparagus</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Kale</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Eggplant</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Celery</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Squash</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Bell Pepper</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Corn</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Tomato</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Olives</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Peas</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Jalapeno</button>
+                </div>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#fruit">Fruit </button>
+                <!-- FRUIT -->
+                <div id="fruit" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Apples</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Oranges</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Grapes</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pineapple</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Mango</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Strawberries</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Blueberries</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Raspberries</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Bananas</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Canteloupe</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Watermelon</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Lemon</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Lime</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Kiwi</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Coconut</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pomegranate</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cranberry</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Apricot</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cherry</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cucumber</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Peach</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Pear</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Avocado</button>
+                    
+                </div>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#dry">Dry Ingredients </button>
+                <!-- DRY INGREDIENTS -->
+                <div id="dry" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Flour</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Sugar</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Brown Sugar</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Powdered Sugar</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Rice</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Baking Soda</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Baking Powder</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Breadcrumbs</button>
+                    
+                </div>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#spice">Spices </button>
+                <!-- SPICES -->
+                <div id="spice" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Garlic Powder</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Onion Powder</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cinnamon</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cumin</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Paprika</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cayenne Pepper</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Parsley</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Basil</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ginger</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Allspice</button>
+
+                </div>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#liquid">Liquids </button>
+                <!-- LIQUIDS -->
+                <div id="liquid" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ketchup</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Yellow Mustard</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Spicy Brown Mustard</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Honey Mustard</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Dijon Mustard</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Soy Sauce</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Vegetable Oil</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Vinegar</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Milk</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Honey</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Maple Syrup</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">BBQ Sauce</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Tomato Sauce</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Ranch</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Hot Sauce</button>
+                    
+                </div>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#misc">Miscellaneous </button>
+                <!-- MISCELLANEOUS -->
+                <div id="misc" class="collapse">
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Butter</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Eggs</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Minced Garlic</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Sandwhich Bread</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Baguette</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">English Muffin</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Tortillas</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Black Beans</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Baked Beans</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Kidney Beans</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Cheddar Cheese</button>
+                    <button type="button" id = "clicked" class="btn btn-outline-success">Mozzarella</button>
+                    
+                </div>
+
+            <button type="button" class="btn btn-block" id="fetch">Search </button>
+        </div>
+        <!-- making another div for all the filters we will have -->
+        <div class="float-child" id="section2">
+            <h2>Filters</h2>
+                <!-- INTOLERANCES -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#allergies">Intolerances </button>
+                    <div id="allergies" class="collapse">
+                        <button type="button" id="intolerance" class="btn btn-outline-success">Dairy</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Egg</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Gluten</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Grain</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Peanut</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Seafood</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Sesame</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Shellfish</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Soy</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Sulfite</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Tree Nut</button>
+                        <button type="button" id="intolerance"  class="btn btn-outline-success">Wheat</button>
+                    </div>
+                <!-- CALORIES -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#cal">Total Calories </button>
+                    <div id="cal" class="collapse">
+                            <div class="d-flex my-4" id="calories">
+                                <span class="font-weight-bold indigo-text mr-2 mt-1">100</span>
+                                <form class="range-field w-25">
+                                    <input type="range" min="100" max="1000" value="550" class="slider" step="50" onchange="caloriesRange.value=value">
+                                    <input type="text" id="caloriesRange">
+                                </form>
+                                <span class="font-weight-bold indigo-text ml-2 mt-1">1000</span>
+                              </div>
+                    </div>
+                <button type = "button" class="btn btn-block" id = "test">Run Test Cases</button>      
+        </div>
+    </div>
+    <script src = "app.js"></script>
+    <script src = "testSuite.js"></script>
+</body>
+</html>
